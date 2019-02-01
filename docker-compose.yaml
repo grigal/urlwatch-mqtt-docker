@@ -1,0 +1,13 @@
+version: '2'
+services:
+  urlwatch:
+    container_name: urlwatch-mqtt
+    build: .
+    image: stephenhouser/urlwatch
+    volumes:
+      - ./urlwatch:/root/.urlwatch
+
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    ports:
+      - "1883:1883"

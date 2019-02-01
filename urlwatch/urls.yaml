@@ -1,0 +1,22 @@
+kind: url
+name: stephenhouser
+url: https://stephenhouser.com
+---
+kind: url
+name: f-engrave
+filter:
+- xpath: //table//tr[position()=last()-1]//td[position()=1]//a//text()
+url: http://www.scorchworks.com/Fengrave/fengrave.html
+---
+kind: url
+name: k40-whisperer
+url: http://www.scorchworks.com/K40whisperer/k40whisperer.html
+filter:
+- xpath: //table//tr[position()=last()]//td[position()=3]//a//text()
+---
+kind: url
+name: urlwatch-mqtt-docker
+url: "https://github.com/stephenhouser/urlwatch-mqtt-docker/releases/latest"
+filter:
+  - xpath: '(//div[contains(@class,"release-timeline-tags")]//h4)[1]/a'
+  - html2text: re
