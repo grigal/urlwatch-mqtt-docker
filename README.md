@@ -1,4 +1,4 @@
-urlwatch-mqtt
+urlwatch-mqtt-docker
 ========
 
 Monitor webpages for updates and post to MQTT broker. Includes a custom `urlwatch` reporter hook for connecting and publishing to an MQTT broker (`hooks.py`).
@@ -44,6 +44,9 @@ report:
 ```
 
 ## urls.yaml
+
+The filters are important here as the result of the filter will be passed as `old_data` and `new_data` to MQTT as part of the published message. If you don't specify a filter then the whole page will be sent. (NOTE: I've set that if the changed data is >80 characters it won't be sent to MQTT. There's no magic here, just my 80-character preference.)
+
 
 ```
 kind: url
